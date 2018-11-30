@@ -1,0 +1,13 @@
+微信登录接口（根据token识别是否登录，访问后台涉及用户信息的操作都要带上）：
+1.根据手机号发送验证码。
+访问路径：/sbdj-mp/account/verify/get
+入参：phone（手机号）
+出参：verifyCode（验证码）
+2.根据验证码判断是否登录成功，成功则返回token。
+访问路径：/sbdj-mp/account/verify/pass
+入参：verifyCode（验证码）
+出参：token
+3.根据unionid获取token（用户进入小程序时，或者从用户手机缓存中获取）。
+/sbdj-mp/account/login
+入参：unionid
+出参：token
